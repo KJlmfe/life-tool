@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>今日艾宾浩斯复习日期</title>
+    <style>
+      table{
+        border-collapse:collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" cellpadding="6px">
+    </table>
+    <ul>
+      <li>每晚睡前总结当天内容</li>
+      <li>每天起床后按上表复习</li>
+    </ul>
+    <script type="text/javascript">
+      var cfg = [1, 2, 4, 7, 15, 30];
+      var today = new Date();
+      var table = document.getElementsByTagName("table");
+      var html = "<caption>今日艾宾浩斯复习日期</caption>";
+      for(var i=0; i<cfg.length; i++) {
+        var day = new Date(today.getTime() - cfg[i]*24*60*60*1000);
+        html += "<tr><td>"+cfg[i]+"天前</td><td>"+day.getFullYear()+"-"+day.getMonth()+"-"+day.getDate()+"</td><td>星期"+day.getDay()+"</td></tr>";
+      }
+      table[0].innerHTML = html;
+    </script>
+  </body>
+</html>
